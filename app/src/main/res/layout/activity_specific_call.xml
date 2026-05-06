@@ -19,124 +19,146 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chamado"
+            android:text="Detalhes do Chamado"
             android:textSize="14sp"
-            android:textColor="@color/body_text_grey"/>
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:letterSpacing="0.1"
+            android:textColor="@color/body_text_grey"
+            android:layout_marginBottom="4dp"/>
 
         <TextView
             android:id="@+id/txtNumeroChamado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="#0001"
-            android:textSize="28sp"
+            android:textSize="36sp"
             android:textStyle="bold"
-            android:textColor="@color/deep_text_blue"
-            android:layout_marginBottom="20dp"/>
+            android:textColor="@color/tech_trust_blue"
+            android:layout_marginBottom="32dp"/>
 
         <!-- CARD PRINCIPAL -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/border_grey"
             app:cardBackgroundColor="@color/base_white">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="28dp">
 
                 <!-- STATUS -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status"
+                    android:text="Situação Atual"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/deep_text_blue"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="16dp"/>
 
                 <RadioGroup
                     android:id="@+id/radioStatus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
 
                     <RadioButton
                         android:id="@+id/radioAberto"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Em aberto"/>
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:text="Aguardando (Em aberto)"
+                        android:buttonTint="@color/urgency_red"
+                        android:textSize="16sp"
+                        android:paddingStart="12dp"/>
 
                     <RadioButton
                         android:id="@+id/radioAndamento"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Em andamento"/>
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:text="Em execução (Andamento)"
+                        android:buttonTint="@color/progress_orange"
+                        android:textSize="16sp"
+                        android:paddingStart="12dp"/>
 
                     <RadioButton
                         android:id="@+id/radioFinalizada"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Finalizada"/>
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:text="Concluído (Finalizada)"
+                        android:buttonTint="@color/success_green"
+                        android:textSize="16sp"
+                        android:paddingStart="12dp"/>
                 </RadioGroup>
 
                 <!-- SOLUÇÃO -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Solução"
+                    android:text="Resumo Técnico / Solução"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/deep_text_blue"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="8dp"/>
+                    android:layout_marginBottom="12dp"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Descreva a solução"
+                    android:hint="Descreva o que foi feito..."
                     app:boxBackgroundMode="outline"
-                    app:boxCornerRadiusTopStart="14dp"
-                    app:boxCornerRadiusTopEnd="14dp"
-                    app:boxCornerRadiusBottomStart="14dp"
-                    app:boxCornerRadiusBottomEnd="14dp">
+                    app:boxCornerRadiusTopStart="16dp"
+                    app:boxCornerRadiusTopEnd="16dp"
+                    app:boxCornerRadiusBottomStart="16dp"
+                    app:boxCornerRadiusBottomEnd="16dp"
+                    app:startIconDrawable="@android:drawable/ic_menu_edit"
+                    app:startIconTint="@color/tech_trust_blue"
+                    android:layout_marginBottom="32dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/inputSolucao"
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
+                        android:layout_height="160dp"
                         android:gravity="top"
-                        android:inputType="textMultiLine"/>
+                        android:inputType="textMultiLine"
+                        android:paddingTop="16dp"
+                        android:textSize="16sp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- BOTÃO ENVIAR -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnEnviar"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="24dp"
-                    android:text="Salvar alterações"
+                    android:layout_height="64dp"
+                    android:text="Atualizar Chamado"
                     android:textColor="@color/base_white"
                     android:textAllCaps="false"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
                     app:backgroundTint="@color/tech_trust_blue"
-                    app:cornerRadius="16dp"/>
+                    app:cornerRadius="20dp"
+                    app:elevation="4dp"/>
 
                 <!-- BOTÃO VOLTAR -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnVoltar"
                     android:layout_width="wrap_content"
-                    android:layout_height="42dp"
-                    android:layout_marginTop="14dp"
-                    android:text="Voltar"
-                    android:textSize="12sp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Voltar sem salvar"
+                    android:textSize="14sp"
                     android:textAllCaps="false"
-                    android:textColor="@color/deep_text_blue"
+                    android:textColor="@color/body_text_grey"
                     app:backgroundTint="@color/base_white"
                     app:strokeColor="@color/border_grey"
-                    app:strokeWidth="1.2dp"
-                    app:cornerRadius="12dp"
+                    app:strokeWidth="1dp"
+                    app:cornerRadius="16dp"
                     android:layout_gravity="center"/>
 
             </LinearLayout>

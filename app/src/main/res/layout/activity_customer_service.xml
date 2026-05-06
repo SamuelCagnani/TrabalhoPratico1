@@ -16,41 +16,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Atendimento"
-        android:textSize="28sp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        android:textColor="@color/deep_text_blue"
-        android:layout_marginBottom="16dp"/>
+        android:textColor="@color/tech_trust_blue"
+        android:layout_marginBottom="24dp"/>
 
     <!-- CARD DE RESUMO -->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="18dp"
-        app:cardElevation="6dp"
-        app:cardBackgroundColor="@color/base_white">
+        app:cardCornerRadius="32dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1.5dp"
+        app:strokeColor="@color/border_grey"
+        app:cardBackgroundColor="@color/base_white"
+        android:layout_marginBottom="24dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="18dp">
+            android:padding="32dp"
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Chamados abertos"
+                android:text="FILA DE ESPERA"
                 android:textSize="14sp"
-                android:textColor="@color/body_text_grey"/>
+                android:textColor="@color/body_text_grey"
+                android:textStyle="bold"
+                android:letterSpacing="0.2"/>
 
             <TextView
                 android:id="@+id/txtQtdChamados"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:textSize="32sp"
+                android:textSize="64sp"
                 android:textStyle="bold"
                 android:textColor="@color/tech_trust_blue"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="chamados pendentes"
+                android:textSize="15sp"
+                android:textColor="@color/body_text_grey"/>
 
         </LinearLayout>
 
@@ -60,50 +73,46 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Buscar chamados abertos"
+        android:hint="Localizar na fila..."
         app:boxBackgroundMode="outline"
-        app:boxCornerRadiusTopStart="14dp"
-        app:boxCornerRadiusTopEnd="14dp"
-        app:boxCornerRadiusBottomStart="14dp"
-        app:boxCornerRadiusBottomEnd="14dp">
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:startIconDrawable="@android:drawable/ic_menu_search"
+        app:startIconTint="@color/tech_trust_blue"
+        android:layout_marginBottom="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputBusca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"/>
+            android:textSize="16sp"
+            android:paddingVertical="16dp"/>
     </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- SEPARADOR -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="14dp"
-        android:background="@color/border_grey"/>
 
     <!-- LISTA DE CHAMADOS ABERTOS -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerChamadosAbertos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"/>
 
     <!-- BOTÃO VOLTAR -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnVoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:text="Voltar"
-        android:textSize="12sp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Sair do modo atendimento"
+        android:textSize="15sp"
         android:textAllCaps="false"
-        android:textColor="@color/deep_text_blue"
+        android:textColor="@color/body_text_grey"
         app:backgroundTint="@color/base_white"
         app:strokeColor="@color/border_grey"
-        app:strokeWidth="1.2dp"
-        app:cornerRadius="12dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="6dp"/>
+        app:strokeWidth="1dp"
+        app:cornerRadius="20dp"
+        android:layout_marginTop="16dp"/>
 
 </LinearLayout>

@@ -15,26 +15,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="40dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Resolva Já"
-            android:textSize="30sp"
+            android:textSize="32sp"
             android:textStyle="bold"
-            android:letterSpacing="0.10"
-            android:textColor="@color/deep_text_blue"/>
+            android:letterSpacing="0.05"
+            android:textColor="@color/tech_trust_blue"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resolva problemas de forma rápida e prática"
-            android:textSize="17sp"
-            android:letterSpacing="0.01"
+            android:text="Soluções rápidas na palma da sua mão"
+            android:textSize="16sp"
             android:textColor="@color/body_text_grey"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="60dp"/>
+            android:layout_marginTop="8dp"/>
 
     </LinearLayout>
 
@@ -43,26 +42,26 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="4dp"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="10dp"
-        app:cardBackgroundColor="@color/base_white">
+        app:cardCornerRadius="28dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="@color/base_white"
+        app:strokeWidth="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="28dp">
+            android:padding="24dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Escolha uma opção"
+                android:text="O que você deseja fazer?"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:letterSpacing="0.02"
                 android:textColor="@color/deep_text_blue"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="24dp"
+                android:layout_gravity="center_horizontal"/>
 
             <!-- BOTÕES -->
             <com.google.android.material.button.MaterialButton
@@ -73,9 +72,13 @@
                 android:text="Cadastrar Demanda"
                 android:textAllCaps="false"
                 android:textColor="@color/base_white"
-                android:textSize="15sp"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:backgroundTint="@color/tech_trust_blue"
-                app:cornerRadius="18dp"/>
+                app:cornerRadius="20dp"
+                app:icon="@android:drawable/ic_input_add"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnChamados"
@@ -85,9 +88,13 @@
                 android:text="Listar Chamados"
                 android:textAllCaps="false"
                 android:textColor="@color/base_white"
-                android:textSize="15sp"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:backgroundTint="@color/connect_blue"
-                app:cornerRadius="18dp"/>
+                app:cornerRadius="20dp"
+                app:icon="@android:drawable/ic_menu_sort_by_size"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAtendimentos"
@@ -96,25 +103,29 @@
                 android:text="Atendimentos"
                 android:textAllCaps="false"
                 android:textColor="@color/base_white"
-                android:textSize="15sp"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:backgroundTint="@color/success_green"
-                app:cornerRadius="18dp"/>
+                app:cornerRadius="20dp"
+                app:icon="@android:drawable/ic_menu_agenda"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"/>
 
             <!-- BOTÃO VOLTAR -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnVoltar"
                 android:layout_width="wrap_content"
-                android:layout_height="44dp"
-                android:text="Voltar"
+                android:layout_height="48dp"
+                android:text="Sair"
                 android:textAllCaps="false"
-                android:textSize="13sp"
-                android:textColor="@color/deep_text_blue"
+                android:textSize="14sp"
+                android:textColor="@color/urgency_red"
                 app:backgroundTint="@color/base_white"
                 app:strokeColor="@color/border_grey"
                 app:strokeWidth="1.5dp"
-                app:cornerRadius="12dp"
+                app:cornerRadius="14dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="24dp"/>
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

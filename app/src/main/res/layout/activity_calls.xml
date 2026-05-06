@@ -15,103 +15,113 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chamados"
-        android:textSize="28sp"
+        android:text="Meus Chamados"
+        android:textSize="32sp"
         android:textStyle="bold"
-        android:letterSpacing="0.02"
-        android:textColor="@color/deep_text_blue"
-        android:layout_marginBottom="16dp"/>
+        android:letterSpacing="-0.02"
+        android:textColor="@color/tech_trust_blue"
+        android:layout_marginBottom="24dp"/>
 
     <!-- BUSCA -->
-    <com.google.android.material.textfield.TextInputLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Buscar chamados"
-        app:boxBackgroundMode="outline"
-        app:boxCornerRadiusTopStart="14dp"
-        app:boxCornerRadiusTopEnd="14dp"
-        app:boxCornerRadiusBottomStart="14dp"
-        app:boxCornerRadiusBottomEnd="14dp">
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="1.5dp"
+        app:strokeColor="@color/border_grey"
+        android:layout_marginBottom="16dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputBusca"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:hint="Pesquisar por título ou ID"
+            app:boxBackgroundMode="none"
+            app:hintEnabled="false"
+            app:startIconDrawable="@android:drawable/ic_menu_search"
+            app:startIconTint="@color/body_text_grey"
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputBusca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pesquisar por título ou ID"
+                android:background="@android:color/transparent"
+                android:paddingVertical="16dp"
+                android:textSize="16sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- FILTROS -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="14dp">
+        android:layout_marginBottom="24dp">
 
         <!-- DATA -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnData"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
-            android:layout_height="46dp"
+            android:layout_height="54dp"
             android:layout_weight="1"
-            android:text="Data"
-            android:textSize="13sp"
+            android:text="Filtrar Data"
+            android:textSize="14sp"
             android:textColor="@color/deep_text_blue"
             android:textAllCaps="false"
-            app:backgroundTint="@color/base_white"
             app:strokeColor="@color/border_grey"
-            app:strokeWidth="1dp"
-            app:cornerRadius="14dp"/>
+            app:cornerRadius="16dp"
+            app:icon="@android:drawable/ic_menu_today"
+            app:iconSize="18dp"
+            app:iconTint="@color/tech_trust_blue"/>
 
         <View
-            android:layout_width="10dp"
+            android:layout_width="12dp"
             android:layout_height="1dp"/>
 
         <!-- STATUS -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnStatus"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
-            android:layout_height="46dp"
+            android:layout_height="54dp"
             android:layout_weight="1"
-            android:text="Status"
-            android:textSize="13sp"
+            android:text="Filtrar Status"
+            android:textSize="14sp"
             android:textColor="@color/deep_text_blue"
             android:textAllCaps="false"
-            app:backgroundTint="@color/base_white"
             app:strokeColor="@color/border_grey"
-            app:strokeWidth="1dp"
-            app:cornerRadius="14dp"/>
+            app:cornerRadius="16dp"
+            app:icon="@android:drawable/ic_menu_info_details"
+            app:iconSize="18dp"
+            app:iconTint="@color/tech_trust_blue"/>
 
     </LinearLayout>
-
-    <!-- DIVISÃO SUAVE -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/border_grey"/>
 
     <!-- LISTA -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerChamados"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp"/>
 
     <!-- BOTÃO VOLTAR -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnVoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:text="Voltar"
-        android:textSize="12sp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Voltar ao Início"
+        android:textSize="15sp"
         android:textAllCaps="false"
-        android:textColor="@color/deep_text_blue"
-        app:backgroundTint="@color/base_white"
+        android:textColor="@color/body_text_grey"
+        app:backgroundTint="@color/surface_light"
         app:strokeColor="@color/border_grey"
-        app:strokeWidth="1.2dp"
-        app:cornerRadius="12dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="6dp"/>
+        app:strokeWidth="1dp"
+        app:cornerRadius="20dp"
+        android:layout_marginTop="8dp"/>
 
 </LinearLayout>

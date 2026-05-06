@@ -11,22 +11,42 @@
 
     <!-- Logo -->
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
         android:contentDescription="Logo do app"
         android:scaleType="fitCenter"
         android:src="@drawable/resolva_ja" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bem-vindo ao Resolva Já"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/tech_trust_blue"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sua plataforma de suporte rápido"
+        android:textSize="14sp"
+        android:textColor="@color/body_text_grey"
+        android:layout_marginBottom="32dp"/>
+
     <!-- Botão MODERNO -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/entrar"
-        android:layout_width="250dp"
-        android:layout_height="55dp"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
         android:layout_marginTop="32dp"
         android:text="Entrar"
+        android:textAllCaps="false"
         android:textColor="@color/base_white"
-        android:textSize="20sp"
-        app:backgroundTint="@color/success_green"
-        app:cornerRadius="16dp" />
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/tech_trust_blue"
+        app:cornerRadius="18dp"
+        app:elevation="4dp" />
 
 </LinearLayout>
