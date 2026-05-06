@@ -1,10 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    android:orientation="vertical"
+    android:background="@color/surface_light"
+    android:paddingHorizontal="28dp"
+    android:paddingTop="140dp"
+    android:paddingBottom="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resolva Já"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.10"
+            android:textColor="@color/deep_text_blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resolva problemas de forma rápida e prática"
+            android:textSize="17sp"
+            android:letterSpacing="0.01"
+            android:textColor="@color/body_text_grey"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="60dp"/>
+
+    </LinearLayout>
+
+
+    <!-- CARD -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/base_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escolha uma opção"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02"
+                android:textColor="@color/deep_text_blue"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- BOTÕES -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDemanda"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginBottom="16dp"
+                android:text="Cadastrar Demanda"
+                android:textAllCaps="false"
+                android:textColor="@color/base_white"
+                android:textSize="15sp"
+                app:backgroundTint="@color/tech_trust_blue"
+                app:cornerRadius="18dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHistorico"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginBottom="16dp"
+                android:text="Listar Chamados"
+                android:textAllCaps="false"
+                android:textColor="@color/base_white"
+                android:textSize="15sp"
+                app:backgroundTint="@color/connect_blue"
+                app:cornerRadius="18dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="Atendimentos"
+                android:textAllCaps="false"
+                android:textColor="@color/base_white"
+                android:textSize="15sp"
+                app:backgroundTint="@color/success_green"
+                app:cornerRadius="18dp"/>
+
+            <!-- BOTÃO VOLTAR -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVoltar"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:text="Voltar"
+                android:textAllCaps="false"
+                android:textSize="13sp"
+                android:textColor="@color/deep_text_blue"
+                app:backgroundTint="@color/base_white"
+                app:strokeColor="@color/border_grey"
+                app:strokeWidth="1.5dp"
+                app:cornerRadius="12dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- ESPAÇO -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- RODAPÉ -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="© Resolva Já"
+        android:textSize="12sp"
+        android:textColor="@color/body_text_grey"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+</LinearLayout>

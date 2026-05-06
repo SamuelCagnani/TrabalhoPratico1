@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrabalhoPratico1SamuelDeMelloCagnani">
         <activity
+            android:name=".SpecificCallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CallsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DemandActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity

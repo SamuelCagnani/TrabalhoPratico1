@@ -1,5 +1,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,15 +17,16 @@
         android:scaleType="fitCenter"
         android:src="@drawable/resolva_ja" />
 
-    <!-- Botão -->
-    <Button
+    <!-- Botão MODERNO -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/entrar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
         android:layout_marginTop="32dp"
-        android:backgroundTint="@color/success_green"
         android:text="Entrar"
         android:textColor="@color/base_white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:backgroundTint="@color/success_green"
+        app:cornerRadius="16dp" />
 
 </LinearLayout>
