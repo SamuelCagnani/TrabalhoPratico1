@@ -34,6 +34,10 @@ public class SpecificCallActivity extends AppCompatActivity {
         chamado = (Chamado) getIntent().getSerializableExtra("chamado");
 
         TextView txtNumeroChamado = findViewById(R.id.txtNumeroChamado);
+        TextView txtTituloDetalhe = findViewById(R.id.txtTituloDetalhe);
+        TextView txtLocalDetalhe = findViewById(R.id.txtLocalDetalhe);
+        TextView txtDescricaoDetalhe = findViewById(R.id.txtDescricaoDetalhe);
+        
         radioStatus = findViewById(R.id.radioStatus);
         inputSolucao = findViewById(R.id.inputSolucao);
         MaterialButton btnEnviar = findViewById(R.id.btnEnviar);
@@ -41,14 +45,20 @@ public class SpecificCallActivity extends AppCompatActivity {
 
         if (chamado != null) {
             txtNumeroChamado.setText("#" + String.format(Locale.getDefault(), "%04d", chamado.getId()));
+            txtTituloDetalhe.setText(chamado.getTitulo());
+            txtLocalDetalhe.setText("Local: " + chamado.getLocal());
+            txtDescricaoDetalhe.setText(chamado.getDescricao());
             inputSolucao.setText(chamado.getSolucao());
 
-            if ("Em aberto".equals(chamado.getStatus())) {
-                radioStatus.check(R.id.radioAberto);
-            } else if ("Em andamento".equals(chamado.getStatus())) {
-                radioStatus.check(R.id.radioAndamento);
-            } else if ("Finalizada".equals(chamado.getStatus())) {
-                radioStatus.check(R.id.radioFinalizada);
+            String status = chamado.getStatus();
+            if (status != null) {
+                if (status.contains("Em aberto")) {
+                    radioStatus.check(R.id.radioAberto);
+                } else if (status.contains("Andamento")) {
+                    radioStatus.check(R.id.radioAndamento);
+                } else if (status.contains("Finalizada")) {
+                    radioStatus.check(R.id.radioFinalizada);
+                }
             }
         }
 
@@ -69,8 +79,14 @@ public class SpecificCallActivity extends AppCompatActivity {
             return;
         }
 
-        RadioButton radioSelecionado = findViewById(selectedId);
-        chamado.setStatus(radioSelecionado.getText().toString());
+        String novoStatus = "Em aberto";
+        if (selectedId == R.id.radioAndamento) {
+            novoStatus = "Em andamento";
+        } else if (selectedId == R.id.radioFinalizada) {
+            novoStatus = "Finalizada";
+        }
+
+        chamado.setStatus(novoStatus);
         chamado.setSolucao(inputSolucao.getText().toString());
 
         int rows = dbHelper.atualizarChamado(chamado);

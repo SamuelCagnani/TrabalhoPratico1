@@ -1,8 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.TrabalhoPratico1SamuelDeMelloCagnani" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.TrabalhoPratico1SamuelDeMelloCagnani" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primárias -->
+        <item name="colorPrimary">@color/tech_trust_blue</item>
+        <item name="colorPrimaryVariant">@color/deep_text_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secundárias -->
+        <item name="colorSecondary">@color/tech_trust_blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Cores de Texto e Superfície -->
+        <item name="android:textColorPrimary">@color/deep_text_blue</item>
+        <item name="android:textColorSecondary">@color/body_text_grey</item>
+        <item name="colorSurface">@color/base_white</item>
+        <item name="colorOnSurface">@color/deep_text_blue</item>
+
+        <!-- Controle de cores de componentes (CheckBox, Radio, Switch) -->
+        <item name="colorControlActivated">@color/tech_trust_blue</item>
+        <item name="colorAccent">@color/tech_trust_blue</item>
     </style>
 
     <style name="Theme.TrabalhoPratico1SamuelDeMelloCagnani" parent="Base.Theme.TrabalhoPratico1SamuelDeMelloCagnani" />

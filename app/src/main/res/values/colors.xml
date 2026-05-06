@@ -14,7 +14,7 @@
     <!-- Neutras -->
     <color name="base_white">#FFFFFF</color>
     <color name="deep_text_blue">#002D62</color>
-    <color name="body_text_grey">#6C757D</color>
+    <color name="body_text_grey">#495057</color>
     <color name="border_grey">#DEE2E6</color>
     <color name="surface_light">#F8F9FA</color>
 

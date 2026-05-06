@@ -74,8 +74,7 @@
             android:layout_height="wrap_content"
             android:text="Local: Sala 102"
             android:textSize="15sp"
-            android:textColor="@color/body_text_grey"
-            android:alpha="0.8"/>
+            android:textColor="@color/body_text_grey"/>
 
         <View
             android:layout_width="match_parent"
@@ -90,8 +89,7 @@
             android:text="15/10/2023 14:30"
             android:textSize="12sp"
             android:textColor="@color/body_text_grey"
-            android:gravity="end"
-            android:fontFamily="sans-serif-light"/>
+            android:gravity="end"/>
 
     </LinearLayout>
 

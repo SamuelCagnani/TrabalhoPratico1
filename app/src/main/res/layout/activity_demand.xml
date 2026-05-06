@@ -69,7 +69,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textCapSentences"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp"
+                        android:textColor="@color/deep_text_blue"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- LOCAL -->
@@ -90,7 +91,8 @@
                         android:id="@+id/inputLocal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp"
+                        android:textColor="@color/deep_text_blue"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- DESCRIÇÃO -->
@@ -112,7 +114,8 @@
                         android:gravity="top"
                         android:inputType="textMultiLine"
                         android:paddingTop="16dp"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp"
+                        android:textColor="@color/deep_text_blue"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- TIPO -->

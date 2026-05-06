@@ -88,7 +88,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:paddingVertical="16dp"/>
+            android:paddingVertical="16dp"
+            android:textColor="@color/deep_text_blue"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- LISTA DE CHAMADOS ABERTOS -->

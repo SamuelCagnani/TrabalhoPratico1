@@ -53,6 +53,53 @@
                 android:orientation="vertical"
                 android:padding="28dp">
 
+                <!-- DADOS DO CHAMADO (READ ONLY) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Informações do Problema"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/deep_text_blue"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:id="@+id/txtTituloDetalhe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Título do Chamado"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/tech_trust_blue"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/txtLocalDetalhe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Local: Sala 000"
+                    android:textSize="15sp"
+                    android:textColor="@color/body_text_grey"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:id="@+id/txtDescricaoDetalhe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Descrição completa do problema relatado pelo usuário na abertura do chamado."
+                    android:textSize="16sp"
+                    android:textColor="@color/deep_text_blue"
+                    android:background="@color/surface_light"
+                    android:padding="16dp"
+                    android:layout_marginBottom="24dp"
+                    app:lineHeight="22sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border_grey"
+                    android:layout_marginBottom="24dp"/>
+
                 <!-- STATUS -->
                 <TextView
                     android:layout_width="wrap_content"
@@ -128,7 +175,8 @@
                         android:gravity="top"
                         android:inputType="textMultiLine"
                         android:paddingTop="16dp"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp"
+                        android:textColor="@color/deep_text_blue"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- BOTÃO ENVIAR -->
