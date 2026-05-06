@@ -78,7 +78,7 @@
                 app:cornerRadius="18dp"/>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnHistorico"
+                android:id="@+id/btnChamados"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
                 android:layout_marginBottom="16dp"
@@ -90,7 +90,7 @@
                 app:cornerRadius="18dp"/>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnPerfil"
+                android:id="@+id/btnAtendimentos"
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
                 android:text="Atendimentos"

@@ -16,9 +16,21 @@ public class HomeActivity extends AppCompatActivity {
 
         MaterialButton btnVoltar = findViewById(R.id.btnVoltar);
         MaterialButton btnDemanda = findViewById(R.id.btnDemanda);
+        MaterialButton btnChamados = findViewById(R.id.btnChamados);
+        MaterialButton btnAtendimentos = findViewById(R.id.btnAtendimentos);
 
         btnDemanda.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, DemandActivity.class);
+            startActivity(intent);
+        });
+
+        btnChamados.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, CallsActivity.class);
+            startActivity(intent);
+        });
+
+        btnAtendimentos.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, CustomerServiceActivity.class);
             startActivity(intent);
         });
 

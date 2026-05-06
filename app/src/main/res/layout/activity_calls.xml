@@ -1,10 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CallsActivity">
+    android:orientation="vertical"
+    android:background="@color/surface_light"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="12dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- HEADER -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chamados"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.02"
+        android:textColor="@color/deep_text_blue"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- BUSCA -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Buscar chamados"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusBottomEnd="14dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputBusca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- FILTROS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="14dp">
+
+        <!-- DATA -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnData"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_weight="1"
+            android:text="Data"
+            android:textSize="13sp"
+            android:textColor="@color/deep_text_blue"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/base_white"
+            app:strokeColor="@color/border_grey"
+            app:strokeWidth="1dp"
+            app:cornerRadius="14dp"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="1dp"/>
+
+        <!-- STATUS -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStatus"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_weight="1"
+            android:text="Status"
+            android:textSize="13sp"
+            android:textColor="@color/deep_text_blue"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/base_white"
+            app:strokeColor="@color/border_grey"
+            app:strokeWidth="1dp"
+            app:cornerRadius="14dp"/>
+
+    </LinearLayout>
+
+    <!-- DIVISÃO SUAVE -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/border_grey"/>
+
+    <!-- LISTA -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerChamados"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"/>
+
+    <!-- BOTÃO VOLTAR -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:text="Voltar"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:textColor="@color/deep_text_blue"
+        app:backgroundTint="@color/base_white"
+        app:strokeColor="@color/border_grey"
+        app:strokeWidth="1.2dp"
+        app:cornerRadius="12dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"/>
+
+</LinearLayout>
