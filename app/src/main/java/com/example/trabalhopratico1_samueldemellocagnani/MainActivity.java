@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Escutador de evento OnClick com passagem de parâmetro usando função lâmbda
         btnEntrar.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            Intent intent = new Intent(MainActivity.this, MainDrawerActivity.class);
             startActivity(intent);
         });
 

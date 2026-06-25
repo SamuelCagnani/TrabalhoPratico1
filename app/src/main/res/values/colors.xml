@@ -17,6 +17,7 @@
     <color name="body_text_grey">#495057</color>
     <color name="border_grey">#DEE2E6</color>
     <color name="surface_light">#F8F9FA</color>
+    <color name="dark_surface">#1E1E1E</color>
 
     <!-- Básicas -->
     <color name="black">#FF000000</color>

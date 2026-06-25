@@ -113,7 +113,7 @@ public class CallsActivity extends AppCompatActivity {
     }
 
     private void mostrarDialogFiltroStatus() {
-        String[] opcoes = {"Todos", "Em aberto", "Em andamento", "Finalizada"};
+        String[] opcoes = {"Todos", "Aberto", "Em andamento", "Concluído"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Filtrar por Status");
         builder.setItems(opcoes, (dialog, which) -> {

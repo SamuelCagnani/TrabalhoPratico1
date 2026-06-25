@@ -68,8 +68,8 @@ public class CustomerServiceActivity extends AppCompatActivity {
 
     private void carregarChamadosFila() {
         String query = inputBusca.getText().toString();
-        // Na fila, mostramos apenas os que estão "Em aberto"
-        listaChamados = dbHelper.listarChamados(query, "Em aberto", null, null);
+        // Na fila, mostramos apenas os que estão "Aberto"
+        listaChamados = dbHelper.listarChamados(query, "Aberto", null, null);
         adapter.updateList(listaChamados);
         txtQtdChamados.setText(String.valueOf(listaChamados.size()));
     }

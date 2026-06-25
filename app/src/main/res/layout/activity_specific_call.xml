@@ -89,10 +89,21 @@
                     android:text="Descrição completa do problema relatado pelo usuário na abertura do chamado."
                     android:textSize="16sp"
                     android:textColor="@color/deep_text_blue"
-                    android:background="@color/surface_light"
+                    android:background="?attr/colorSurface"
                     android:padding="16dp"
                     android:layout_marginBottom="24dp"
                     app:lineHeight="22sp"/>
+
+                <ImageView
+                    android:id="@+id/imgChamado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Foto do chamado"
+                    android:visibility="gone"
+                    android:background="@color/surface_light"
+                    android:layout_marginBottom="24dp"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -121,7 +132,7 @@
                         android:id="@+id/radioAberto"
                         android:layout_width="match_parent"
                         android:layout_height="54dp"
-                        android:text="Aguardando (Em aberto)"
+                        android:text="Aberto"
                         android:buttonTint="@color/urgency_red"
                         android:textSize="16sp"
                         android:paddingStart="12dp"/>
@@ -130,7 +141,7 @@
                         android:id="@+id/radioAndamento"
                         android:layout_width="match_parent"
                         android:layout_height="54dp"
-                        android:text="Em execução (Andamento)"
+                        android:text="Em andamento"
                         android:buttonTint="@color/progress_orange"
                         android:textSize="16sp"
                         android:paddingStart="12dp"/>
@@ -139,7 +150,7 @@
                         android:id="@+id/radioFinalizada"
                         android:layout_width="match_parent"
                         android:layout_height="54dp"
-                        android:text="Concluído (Finalizada)"
+                        android:text="Concluído"
                         android:buttonTint="@color/success_green"
                         android:textSize="16sp"
                         android:paddingStart="12dp"/>

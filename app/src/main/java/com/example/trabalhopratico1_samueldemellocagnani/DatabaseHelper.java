@@ -13,7 +13,7 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "ResolvaJa.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 4;
 
     private static final String TABLE_CHAMADOS = "chamados";
     private static final String COL_ID = "id";
@@ -24,6 +24,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL_STATUS = "status";
     private static final String COL_DATA = "data_criacao";
     private static final String COL_SOLUCAO = "solucao";
+    private static final String COL_IMAGEM = "imagem_path";
+    private static final String COL_PARSE_ID = "parse_object_id";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -39,14 +41,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COL_TIPO + " TEXT, " +
                 COL_STATUS + " TEXT, " +
                 COL_DATA + " INTEGER, " +
-                COL_SOLUCAO + " TEXT)";
+                COL_SOLUCAO + " TEXT, " +
+                COL_IMAGEM + " TEXT, " +
+                COL_PARSE_ID + " TEXT)";
         db.execSQL(createTable);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CHAMADOS);
-        onCreate(db);
+        if (oldVersion < 4) {
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_CHAMADOS);
+            onCreate(db);
+        }
+    }
+
+    public void limparTodosChamados() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_CHAMADOS, null, null);
     }
 
     public long inserirChamado(Chamado chamado) {
@@ -59,6 +70,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COL_STATUS, chamado.getStatus());
         values.put(COL_DATA, chamado.getDataCriacao());
         values.put(COL_SOLUCAO, chamado.getSolucao());
+        values.put(COL_IMAGEM, chamado.getImagemPath());
+        values.put(COL_PARSE_ID, chamado.getParseObjectId());
 
         return db.insert(TABLE_CHAMADOS, null, values);
     }
@@ -70,6 +83,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COL_SOLUCAO, chamado.getSolucao());
 
         return db.update(TABLE_CHAMADOS, values, COL_ID + " = ?", new String[]{String.valueOf(chamado.getId())});
+    }
+
+    public void atualizarParseObjectId(int chamadoId, String parseObjectId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_PARSE_ID, parseObjectId);
+        db.update(TABLE_CHAMADOS, values, COL_ID + " = ?", new String[]{String.valueOf(chamadoId)});
     }
 
     public List<Chamado> listarChamados(String query, String status, Long dataInicio, Long dataFim) {
@@ -115,10 +135,56 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         cursor.getLong(cursor.getColumnIndex(COL_DATA)),
                         cursor.getString(cursor.getColumnIndex(COL_SOLUCAO))
                 );
+                c.setImagemPath(cursor.getString(cursor.getColumnIndex(COL_IMAGEM)));
+                c.setParseObjectId(cursor.getString(cursor.getColumnIndex(COL_PARSE_ID)));
                 lista.add(c);
             } while (cursor.moveToNext());
         }
         cursor.close();
         return lista;
+    }
+
+    public int getTotalChamados() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_CHAMADOS, null);
+        int total = 0;
+        if (cursor.moveToFirst()) {
+            total = cursor.getInt(0);
+        }
+        cursor.close();
+        return total;
+    }
+
+    public int getChamadosAbertos() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_CHAMADOS + " WHERE " + COL_STATUS + " = ?", new String[]{"Aberto"});
+        int total = 0;
+        if (cursor.moveToFirst()) {
+            total = cursor.getInt(0);
+        }
+        cursor.close();
+        return total;
+    }
+
+    public int getChamadosEmAndamento() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_CHAMADOS + " WHERE " + COL_STATUS + " = ?", new String[]{"Em andamento"});
+        int total = 0;
+        if (cursor.moveToFirst()) {
+            total = cursor.getInt(0);
+        }
+        cursor.close();
+        return total;
+    }
+
+    public int getChamadosConcluidos() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_CHAMADOS + " WHERE " + COL_STATUS + " = ?", new String[]{"Concluído"});
+        int total = 0;
+        if (cursor.moveToFirst()) {
+            total = cursor.getInt(0);
+        }
+        cursor.close();
+        return total;
     }
 }

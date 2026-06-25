@@ -22,4 +22,9 @@
     </style>
 
     <style name="Theme.TrabalhoPratico1SamuelDeMelloCagnani" parent="Base.Theme.TrabalhoPratico1SamuelDeMelloCagnani" />
+
+    <style name="NavItemText" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

@@ -24,63 +24,77 @@
             android:gravity="center_vertical"
             android:layout_marginBottom="12dp">
 
-            <TextView
-                android:id="@+id/txtIdChamado"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="#001"
-                android:textStyle="bold"
-                android:textColor="@color/tech_trust_blue"
-                android:textSize="13sp"
-                android:letterSpacing="0.05"
-                android:background="@color/surface_light"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="2dp"/>
+            <ImageView
+                android:id="@+id/imgMiniatura"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Miniatura da foto"
+                android:visibility="gone"
+                android:layout_marginEnd="12dp"
+                android:background="@color/surface_light" />
 
-            <View
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtIdChamado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#001"
+                    android:textStyle="bold"
+                    android:textColor="@color/tech_trust_blue"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.05"
+                    android:background="@color/surface_light"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/txtTituloChamado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Título do Chamado"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/deep_text_blue"
+                    android:layout_marginBottom="6dp"
+                    android:lineSpacingExtra="2dp"/>
+
+                <TextView
+                    android:id="@+id/txtLocalChamado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Local: Sala 102"
+                    android:textSize="15sp"
+                    android:textColor="@color/body_text_grey"/>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/txtStatusChamado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Em aberto"
+                android:text="Aberto"
                 android:textSize="10sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="6dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/button_outline"
                 android:textColor="@color/tech_trust_blue"
                 android:letterSpacing="0.1"/>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/txtTituloChamado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Título do Chamado"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            android:textColor="@color/deep_text_blue"
-            android:layout_marginBottom="6dp"
-            android:lineSpacingExtra="2dp"/>
-
-        <TextView
-            android:id="@+id/txtLocalChamado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Local: Sala 102"
-            android:textSize="15sp"
-            android:textColor="@color/body_text_grey"/>
-
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/border_grey"
-            android:layout_marginVertical="16dp"/>
+            android:layout_marginVertical="12dp"/>
 
         <TextView
             android:id="@+id/txtDataChamado"

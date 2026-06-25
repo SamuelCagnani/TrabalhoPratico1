@@ -2,14 +2,17 @@ package com.example.trabalhopratico1_samueldemellocagnani;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -42,6 +45,19 @@ public class ChamadoAdapter extends RecyclerView.Adapter<ChamadoAdapter.ViewHold
         holder.txtStatus.setText(chamado.getStatus());
         holder.txtData.setText(dateFormat.format(new Date(chamado.getDataCriacao())));
 
+        if (chamado.getImagemPath() != null && !chamado.getImagemPath().isEmpty()) {
+            File imgFile = new File(chamado.getImagemPath());
+            if (imgFile.exists()) {
+                holder.imgMiniatura.setVisibility(View.VISIBLE);
+                holder.imgMiniatura.setImageBitmap(
+                        BitmapFactory.decodeFile(chamado.getImagemPath()));
+            } else {
+                holder.imgMiniatura.setVisibility(View.GONE);
+            }
+        } else {
+            holder.imgMiniatura.setVisibility(View.GONE);
+        }
+
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, SpecificCallActivity.class);
             intent.putExtra("chamado", chamado);
@@ -61,6 +77,7 @@ public class ChamadoAdapter extends RecyclerView.Adapter<ChamadoAdapter.ViewHold
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtId, txtTitulo, txtLocal, txtStatus, txtData;
+        ImageView imgMiniatura;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,6 +86,7 @@ public class ChamadoAdapter extends RecyclerView.Adapter<ChamadoAdapter.ViewHold
             txtLocal = itemView.findViewById(R.id.txtLocalChamado);
             txtStatus = itemView.findViewById(R.id.txtStatusChamado);
             txtData = itemView.findViewById(R.id.txtDataChamado);
+            imgMiniatura = itemView.findViewById(R.id.imgMiniatura);
         }
     }
 }

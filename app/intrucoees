@@ -1,0 +1,85 @@
+Neste trabalho, os alunos deverão evoluir o Sistema de Chamados desenvolvido anteriormente, transformando-o em uma aplicação mais próxima de um sistema utilizado em ambientes corporativos. O objetivo é aplicar novos conhecimentos estudados ao longo da disciplina, incluindo navegação por menu lateral, armazenamento em nuvem, captura de imagens pela câmera do dispositivo e geração de informações estatísticas. O trabalho deverá ser desenvolvido utilizando como base o projeto já construído no Trabalho Prático 01.
+
+2. Requisitos Obrigatórios
+
+2.1. Menu Lateral (Drawer Navigation)
+
+A aplicação deverá possuir um menu lateral utilizando DrawerLayout, NavigationView e Toolbar.
+O menu deverá conter obrigatoriamente as seguintes opções:
+Novo Chamado
+Listagem de Chamados
+Estatísticas
+Sobre o Sistema
+A navegação entre as telas poderá ser realizada utilizando Activities.
+
+
+
+
+
+
+2.2. Cadastro de Chamados
+
+A tela de cadastro deverá permitir o registro das seguintes informações:
+Título do chamado
+Descrição do problema
+Local do problema
+Status do chamado
+O campo Status deverá possuir pelo menos as seguintes opções:
+Aberto
+Em andamento
+Concluído
+O cadastro do chamado deverá ser persistido no Banco de Dados SQLite e nas Nuvens
+
+2.3. Captura de Imagem
+O sistema deverá permitir que o usuário registre uma fotografia relacionada ao problema informado. A imagem deverá ser obtida utilizando a câmera do dispositivo. Cada chamado deverá possuir uma imagem associada. A fotografia poderá ser exibida posteriormente na tela de listagem ou na tela de detalhes do chamado.
+
+
+
+
+
+
+2.4. Armazenamento em Nuvem
+
+Além do armazenamento local realizado no trabalho anterior, os chamados deverão ser enviados para um serviço de armazenamento em nuvem utilizando a plataforma Back4App. Para cada chamado deverão ser armazenadas na nuvem, no mínimo:
+Título
+Descrição
+Local
+Status
+Data de cadastro
+Nome do arquivo da imagem ou referência equivalente
+A gravação dos dados deverá ocorrer de forma automática após o cadastro do chamado.
+
+
+
+
+
+
+2.5. Listagem de Chamados
+
+A tela de listagem deverá utilizar RecyclerView. Os chamados deverão apresentar pelo menos:
+Título
+Local
+Status
+Caso desejado, o aluno poderá exibir também a miniatura da imagem cadastrada.
+
+
+
+
+
+
+3. Tela de Estatísticas
+
+A aplicação deverá possuir uma tela exclusiva para exibição de estatísticas. Essa tela deverá apresentar, no mínimo:
+Quantidade total de chamados cadastrados;
+Quantidade de chamados abertos;
+Quantidade de chamados em andamento;
+Quantidade de chamados concluídos.
+As informações poderão ser exibidas utilizando TextViews, Cards ou outros componentes visuais.
+
+4. Tela Sobre
+A opção “Sobre o Sistema” deverá apresentar:
+
+Nome do aplicativo;
+Nome dos integrantes do grupo;
+Turma;
+Breve descrição da finalidade do sistema.

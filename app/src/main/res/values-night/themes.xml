@@ -1,7 +1,31 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.TrabalhoPratico1SamuelDeMelloCagnani" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Base.Theme.TrabalhoPratico1SamuelDeMelloCagnani" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primárias - No modo noite usamos tons que não agridem os olhos -->
+        <item name="colorPrimary">@color/tech_trust_blue</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secundárias -->
+        <item name="colorSecondary">@color/connect_blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Cores de Texto e Superfície para Modo Escuro -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/border_grey</item>
+        <item name="colorSurface">#121212</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="android:windowBackground">#121212</item>
+
+        <!-- Controle de cores de componentes (CheckBox, Radio, Switch) -->
+        <item name="colorControlActivated">@color/tech_trust_blue</item>
+        <item name="colorAccent">@color/tech_trust_blue</item>
+    </style>
+
+    <style name="Theme.TrabalhoPratico1SamuelDeMelloCagnani" parent="Base.Theme.TrabalhoPratico1SamuelDeMelloCagnani" />
+
+    <style name="NavItemText" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

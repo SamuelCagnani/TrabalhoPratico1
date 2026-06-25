@@ -11,6 +11,8 @@ public class Chamado implements Serializable {
     private String status;
     private long dataCriacao;
     private String solucao;
+    private String imagemPath;
+    private String parseObjectId;
 
     public Chamado() {}
 
@@ -48,4 +50,10 @@ public class Chamado implements Serializable {
 
     public String getSolucao() { return solucao; }
     public void setSolucao(String solucao) { this.solucao = solucao; }
+
+    public String getImagemPath() { return imagemPath; }
+    public void setImagemPath(String imagemPath) { this.imagemPath = imagemPath; }
+
+    public String getParseObjectId() { return parseObjectId; }
+    public void setParseObjectId(String parseObjectId) { this.parseObjectId = parseObjectId; }
 }

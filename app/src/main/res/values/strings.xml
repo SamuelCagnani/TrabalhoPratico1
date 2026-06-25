@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Trabalho Pratico 1 - Samuel de Mello Cagnani</string>
+    <string name="app_name">Resolva Já</string>
+    <string name="nav_open">Abrir menu</string>
+    <string name="nav_close">Fechar menu</string>
 </resources>

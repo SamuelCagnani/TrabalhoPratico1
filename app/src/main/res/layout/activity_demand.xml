@@ -118,6 +118,43 @@
                         android:textColor="@color/deep_text_blue"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- FOTO -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Registrar Foto"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/deep_text_blue"
+                    android:layout_marginBottom="12dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Tirar Foto do Problema"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:textColor="@color/base_white"
+                    app:backgroundTint="@color/connect_blue"
+                    app:cornerRadius="16dp"
+                    app:icon="@android:drawable/ic_menu_camera"
+                    app:iconGravity="textStart"
+                    app:iconPadding="12dp"
+                    android:layout_marginBottom="16dp"/>
+
+                <ImageView
+                    android:id="@+id/imgPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Preview da foto"
+                    android:background="@color/surface_light"
+                    android:visibility="gone"
+                    android:layout_marginBottom="24dp"/>
+
                 <!-- TIPO -->
                 <TextView
                     android:layout_width="wrap_content"
@@ -154,6 +191,53 @@
                         android:text="Tecnologia"
                         android:buttonTint="@color/tech_trust_blue"
                         android:textSize="15sp"/>
+                </RadioGroup>
+
+                <!-- STATUS -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status do Chamado"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/deep_text_blue"
+                    android:layout_marginBottom="12dp"/>
+
+                <RadioGroup
+                    android:id="@+id/radioStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="32dp">
+
+                    <RadioButton
+                        android:id="@+id/radioAberto"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Aberto"
+                        android:buttonTint="@color/urgency_red"
+                        android:textSize="14sp"/>
+
+                    <RadioButton
+                        android:id="@+id/radioAndamento"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Em andamento"
+                        android:buttonTint="@color/progress_orange"
+                        android:textSize="14sp"/>
+
+                    <RadioButton
+                        android:id="@+id/radioConcluido"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Concluído"
+                        android:buttonTint="@color/success_green"
+                        android:textSize="14sp"/>
                 </RadioGroup>
 
                 <!-- BOTÃO ENVIAR -->

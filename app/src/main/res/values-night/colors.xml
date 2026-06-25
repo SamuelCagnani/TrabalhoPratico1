@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sobrescrevendo cores neutras para o modo noturno -->
+    <color name="base_white">#1E1E1E</color> <!-- Cards ficam cinza escuro em vez de branco -->
+    <color name="surface_light">#121212</color> <!-- Fundo da tela fica preto/cinza muito escuro -->
+    <color name="deep_text_blue">#E0E0E0</color> <!-- Títulos ficam cinza claro/branco em vez de azul escuro -->
+    <color name="body_text_grey">#B0B0B0</color> <!-- Textos de apoio ficam cinza médio -->
+    <color name="border_grey">#333333</color> <!-- Bordas ficam bem escuras -->
+</resources>
